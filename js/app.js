@@ -84,6 +84,7 @@ window.onscroll = function () {
       ele.classList.remove(`your-active-class`);
     }
   });
+  // Add button to scroll top
   if (window.scrollY >= 600) {
     btnUp.style.display = `block`;
   } else {
