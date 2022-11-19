@@ -71,7 +71,8 @@ btnAddNewSection.addEventListener(`click`, function () {
   createLi();
 });
 
-// Add Class your-active-class
+// Add Class your-active-class and Add button to scroll top
+let btnUp = document.getElementById(`btn-up`);
 window.onscroll = function () {
   sections.forEach((ele) => {
     if (
@@ -83,11 +84,6 @@ window.onscroll = function () {
       ele.classList.remove(`your-active-class`);
     }
   });
-};
-
-// Add button to scroll top
-let btnUp = document.getElementById(`btn-up`);
-window.onscroll = () => {
   if (window.scrollY >= 600) {
     btnUp.style.display = `block`;
   } else {
