@@ -251,8 +251,14 @@ main .main__hero {
 main .main__hero h1 {
   text-align: center;
 }
-/* Button to add new section */
-#addNewSection {
+/* Button to add and delete new section */
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+}
+#addNewSection,
+#deleteNewSection {
+  margin: 10px;
   font-size: 3em;
   border-radius: 10px;
   text-transform: uppercase;
@@ -268,6 +274,7 @@ main .main__hero h1 {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
+
 /* button to top  */
 #btn-up {
   display: none;
