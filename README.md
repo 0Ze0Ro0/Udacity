@@ -6,5 +6,5 @@ and added a button to remove sections and link it to the navigation bar and it s
 and I added a button to return to the top of the page and make the page dynamic in addition to navigation 
 and modifying some elements to respond to all screens
 
-####You can see the site here:
+You can see the site here:
 https://dulcet-cannoli-9b0b87.netlify.app
