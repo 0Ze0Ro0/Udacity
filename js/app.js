@@ -1,9 +1,8 @@
-// Local Varibles
+// Local Variables
 let sections = document.querySelectorAll(`section`);
 let navBarList = document.getElementById(`navbar__list`);
 let main = document.getElementsByTagName(`main`)[0];
 
-// let newArray = Array.from(sections);
 // Create Li for all sections
 let fragment = document.createDocumentFragment();
 for (const sec of sections) {
@@ -60,12 +59,14 @@ function sectionContent() {
 function addNewSection() {
   main.insertAdjacentHTML(`beforeend`, sectionContent());
 }
+// function to add new navBarLi
 function navBarLists() {
   navBarList.insertAdjacentHTML(
     `beforeend`,
     `<li><a href="#section${lastId}" data-section-id="section${lastId}" class= "menu__link">Section ${lastId}</a></li>`
   );
 }
+
 // Button to add a new session
 let btnAddNewSection = document.getElementById(`addNewSection`);
 btnAddNewSection.addEventListener(`click`, function () {
@@ -74,7 +75,7 @@ btnAddNewSection.addEventListener(`click`, function () {
   sections = document.querySelectorAll(`section`);
 });
 
-// Add Button to delete section
+// Add Button to delete section and li
 function deleteSectionAndLi() {
   if (Array.from(navBarList.children).length > 4) {
     lastId -= 1;
@@ -82,6 +83,7 @@ function deleteSectionAndLi() {
     main.lastElementChild.remove();
   }
 }
+// Button to delete li
 let btnDeleteSection = document.getElementById(`deleteNewSection`);
 btnDeleteSection.addEventListener(`click`, () => {
   deleteSectionAndLi();
