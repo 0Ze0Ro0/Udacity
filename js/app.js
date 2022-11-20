@@ -1,17 +1,18 @@
-// Create Li for all sections
+// Local Varibles
 let sections = document.querySelectorAll(`section`);
 let navBarList = document.getElementById(`navbar__list`);
-function createLi() {
-  let fragment = document.createDocumentFragment();
-  for (const sec of sections) {
-    let addLi = document.createElement(`li`);
-    let addA = `<a href="#${sec.id}" data-section-id="${sec.id}" class= "menu__link">${sec.dataset.nav}</a>`;
-    addLi.innerHTML = addA;
-    fragment.appendChild(addLi);
-  }
-  navBarList.append(fragment);
+let main = document.getElementsByTagName(`main`)[0];
+
+// let newArray = Array.from(sections);
+// Create Li for all sections
+let fragment = document.createDocumentFragment();
+for (const sec of sections) {
+  let addLi = document.createElement(`li`);
+  let addA = `<a href="#${sec.id}" data-section-id="${sec.id}" class= "menu__link">${sec.dataset.nav}</a>`;
+  addLi.innerHTML = addA;
+  fragment.appendChild(addLi);
 }
-createLi();
+navBarList.append(fragment);
 
 // Add EventListener to scroll into sections
 navBarList.addEventListener(`click`, function (event) {
@@ -44,7 +45,6 @@ function sectionContent() {
             vitae elit. Integer nec libero venenatis libero ultricies molestie
             semper in tellus. Sed congue et odio sed euismod.
           </p>
-
           <p>
             Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
             gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
@@ -58,17 +58,32 @@ function sectionContent() {
 
 // function to add new section
 function addNewSection() {
-  let main = document.getElementsByTagName(`main`)[0];
   main.insertAdjacentHTML(`beforeend`, sectionContent());
 }
-
+function navBarLists() {
+  navBarList.insertAdjacentHTML(
+    `beforeend`,
+    `<li><a href="#section${lastId}" data-section-id="section${lastId}" class= "menu__link">Section ${lastId}</a></li>`
+  );
+}
 // Button to add a new session
 let btnAddNewSection = document.getElementById(`addNewSection`);
 btnAddNewSection.addEventListener(`click`, function () {
   addNewSection();
-  sections = document.querySelectorAll(`section`);
-  navBarList.innerHTML = "";
-  createLi();
+  navBarLists();
+});
+
+// Add Button to delete section
+function deleteSectionAndLi() {
+  if (Array.from(navBarList.children).length > 4) {
+    lastId -= 1;
+    navBarList.lastElementChild.remove();
+    main.lastElementChild.remove();
+  }
+}
+let btnDeleteSection = document.getElementById(`deleteNewSection`);
+btnDeleteSection.addEventListener(`click`, () => {
+  deleteSectionAndLi();
 });
 
 // Add Class your-active-class and Add button to scroll top
