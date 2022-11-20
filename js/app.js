@@ -71,6 +71,7 @@ let btnAddNewSection = document.getElementById(`addNewSection`);
 btnAddNewSection.addEventListener(`click`, function () {
   addNewSection();
   navBarLists();
+  sections = document.querySelectorAll(`section`);
 });
 
 // Add Button to delete section
@@ -84,6 +85,7 @@ function deleteSectionAndLi() {
 let btnDeleteSection = document.getElementById(`deleteNewSection`);
 btnDeleteSection.addEventListener(`click`, () => {
   deleteSectionAndLi();
+  sections = document.querySelectorAll(`section`);
 });
 
 // Add Class your-active-class and Add button to scroll top
