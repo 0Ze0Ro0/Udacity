@@ -26,6 +26,12 @@ navBarList.addEventListener(`click`, function (event) {
 
 // Add and Remove Active Class
 function addActiveClass(id) {
+  //Add and Remove active class to li
+  let activeLink = document.querySelector(`.link_active`);
+  let activeLinkId = document.querySelector(`[href="#${id}"]`);
+  activeLink?.classList.remove(`link_active`);
+  activeLinkId.classList.add(`link_active`);
+  // Add and Remove active Class to section
   let activeClass = document.querySelector(`.your-active-class`);
   let activeId = document.querySelector(`#${id}`);
   activeClass?.classList.remove(`your-active-class`);
