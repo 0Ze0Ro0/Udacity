@@ -65,6 +65,11 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .navbar__menu ul {
   padding-left: 0;
   margin: 0;
@@ -122,13 +127,133 @@ section {
     padding: 4em;
   }
 }
-
 section:nth-of-type(even) .landing__container {
   margin-right: 0;
   margin-left: auto;
   text-align: right;
 }
+/* Main Style */
+main .main__hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+main .main__hero h1 {
+  text-align: center;
+}
+/* Button to add and delete new section */
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+}
+#addNewSection,
+#deleteNewSection {
+  margin: 10px;
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+@media (max-width: 767px) {
+  .btn {
+    flex-direction: column;
+  }
+  #addNewSection,
+  #deleteNewSection {
+    margin: 5px;
+    font-size: 2em;
+  }
+}
+@media (min-width: 768px) {
+  .btn {
+    flex-direction: column;
+  }
+  #addNewSection,
+  #deleteNewSection {
+    margin: 5px;
+    font-size: 2em;
+  }
+}
+@media (min-width: 992px) {
+  .btn {
+    flex-direction: column;
+  }
+  #addNewSection,
+  #deleteNewSection {
+    margin: 5px;
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 1180px) {
+  #addNewSection,
+  #deleteNewSection {
+    margin: 10px;
+    font-size: 2.5em;
+  }
+}
+/* button to top  */
+#btn-up {
+  display: none;
+  border: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+@media (max-width: 767px) {
+  #btn-up {
+    font-size: 1em;
+    padding: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
 
+@media (min-width: 768px) {
+  #btn-up {
+    font-size: 1.1em;
+    padding: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+@media (min-width: 992px) {
+  #btn-up {
+    font-size: 1.3em;
+    padding: 10px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  #btn-up {
+    font-size: 1.5em;
+    padding: 10px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
@@ -142,6 +267,14 @@ section:nth-of-type(odd) .landing__container::before {
   border-radius: 50%;
   opacity: 0;
   transition: ease 0.5s all;
+  -webkit-transition: ease 0.5s all;
+  -moz-transition: ease 0.5s all;
+  -ms-transition: ease 0.5s all;
+  -o-transition: ease 0.5s all;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 section:nth-of-type(even) .landing__container::before {
@@ -161,6 +294,14 @@ section:nth-of-type(even) .landing__container::before {
   border-radius: 50%;
   opacity: 0;
   transition: ease 0.5s all;
+  -webkit-transition: ease 0.5s all;
+  -moz-transition: ease 0.5s all;
+  -ms-transition: ease 0.5s all;
+  -o-transition: ease 0.5s all;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 section:nth-of-type(3n) .landing__container::after {
@@ -180,6 +321,14 @@ section:nth-of-type(3n) .landing__container::after {
   border-radius: 50%;
   opacity: 0;
   transition: ease 0.5s all;
+  -webkit-transition: ease 0.5s all;
+  -moz-transition: ease 0.5s all;
+  -ms-transition: ease 0.5s all;
+  -o-transition: ease 0.5s all;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 section:nth-of-type(3n + 1) .landing__container::after {
@@ -199,6 +348,14 @@ section:nth-of-type(3n + 1) .landing__container::after {
   border-radius: 50%;
   opacity: 0;
   transition: ease 0.5s all;
+  -webkit-transition: ease 0.5s all;
+  -moz-transition: ease 0.5s all;
+  -ms-transition: ease 0.5s all;
+  -o-transition: ease 0.5s all;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 /* ---- Theme State Rules ---- */
@@ -221,74 +378,23 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;
+  -webkit-animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
   from {
     transform: rotate(0deg) translate(-1em) rotate(0deg);
+    -webkit-transform: rotate(0deg) translate(-1em) rotate(0deg);
+    -moz-transform: rotate(0deg) translate(-1em) rotate(0deg);
+    -ms-transform: rotate(0deg) translate(-1em) rotate(0deg);
+    -o-transform: rotate(0deg) translate(-1em) rotate(0deg);
   }
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    -moz-transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    -ms-transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    -o-transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
-}
-
-/* my edits */
-/* ul to responsive */
-ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-/* Add new section */
-main .main__hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-main .main__hero h1 {
-  text-align: center;
-}
-/* Button to add and delete new section */
-.btn {
-  display: flex;
-  flex-wrap: wrap;
-}
-#addNewSection,
-#deleteNewSection {
-  margin: 10px;
-  font-size: 3em;
-  border-radius: 10px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-
-/* button to top  */
-#btn-up {
-  display: none;
-  border: none;
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 50%;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  cursor: pointer;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
