@@ -1,13 +1,13 @@
 // Local Variables
 let sections = document.querySelectorAll(`section`);
-let navBarList = document.getElementById(`navbar__list`);
-let main = document.getElementsByTagName(`main`)[0];
-
+const navBarList = document.getElementById(`navbar__list`);
+const main = document.getElementsByTagName(`main`)[0];
+let lastId = 4;
 // Create Li for all sections
 let fragment = document.createDocumentFragment();
 for (const sec of sections) {
-  let addLi = document.createElement(`li`);
-  let addA = `<a href="#${sec.id}" data-section-id="${sec.id}" class= "menu__link">${sec.dataset.nav}</a>`;
+  const addLi = document.createElement(`li`);
+  const addA = `<a href="#${sec.id}" data-section-id="${sec.id}" class= "menu__link">${sec.dataset.nav}</a>`;
   addLi.innerHTML = addA;
   fragment.appendChild(addLi);
 }
@@ -16,15 +16,51 @@ navBarList.append(fragment);
 // Add EventListener to scroll into sections
 navBarList.addEventListener(`click`, function (event) {
   event.preventDefault();
-  let secId = event.target.dataset.sectionId;
+  const secId = event.target.dataset.sectionId;
   document.getElementById(secId).scrollIntoView({ behavior: "smooth" });
+  addActiveClass(secId);
   setTimeout(() => {
     window.location.hash = secId;
   }, 500);
 });
 
+// Add and Remove Active Class
+function addActiveClass(id) {
+  let activeClass = document.querySelector(`.your-active-class`);
+  let activeId = document.querySelector(`#${id}`);
+  activeClass?.classList.remove(`your-active-class`);
+  activeId.classList.add(`your-active-class`);
+}
+// Add Active Class on Scroll and Add button to scroll top
+const btnUp = document.getElementById(`btn-up`);
+window.onscroll = function () {
+  sections.forEach((ele) => {
+    if (
+      ele.getBoundingClientRect().top >= -400 &&
+      ele.getBoundingClientRect().top <= 150
+    ) {
+      ele.classList.add(`your-active-class`);
+    } else {
+      ele.classList.remove(`your-active-class`);
+    }
+  });
+  // Add button to scroll top
+  if (window.scrollY >= 600) {
+    btnUp.style.display = `block`;
+  } else {
+    btnUp.style.display = `none`;
+  }
+};
+// Add event click
+btnUp.onclick = () => {
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: `smooth`,
+  });
+};
+
 // Add New Sections
-let lastId = 4;
 function sectionContent() {
   lastId += 1;
   return `
@@ -67,8 +103,8 @@ function navBarLists() {
   );
 }
 
-// Button to add a new session
-let btnAddNewSection = document.getElementById(`addNewSection`);
+// Button to add a new Section
+const btnAddNewSection = document.getElementById(`addNewSection`);
 btnAddNewSection.addEventListener(`click`, function () {
   addNewSection();
   navBarLists();
@@ -84,37 +120,8 @@ function deleteSectionAndLi() {
   }
 }
 // Button to delete li
-let btnDeleteSection = document.getElementById(`deleteNewSection`);
+const btnDeleteSection = document.getElementById(`deleteNewSection`);
 btnDeleteSection.addEventListener(`click`, () => {
   deleteSectionAndLi();
   sections = document.querySelectorAll(`section`);
 });
-
-// Add Class your-active-class and Add button to scroll top
-let btnUp = document.getElementById(`btn-up`);
-window.onscroll = function () {
-  sections.forEach((ele) => {
-    if (
-      ele.getBoundingClientRect().top >= -400 &&
-      ele.getBoundingClientRect().top <= 150
-    ) {
-      ele.classList.add(`your-active-class`);
-    } else {
-      ele.classList.remove(`your-active-class`);
-    }
-  });
-  // Add button to scroll top
-  if (window.scrollY >= 600) {
-    btnUp.style.display = `block`;
-  } else {
-    btnUp.style.display = `none`;
-  }
-};
-// Add event click
-btnUp.onclick = () => {
-  window.scrollTo({
-    left: 0,
-    top: 0,
-    behavior: `smooth`,
-  });
-};
