@@ -398,3 +398,8 @@ section.your-active-class .landing__container::after {
     -o-transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
 }
+/* Active class linl */
+.link_active {
+  background-color: wheat;
+  color: #000;
+}
