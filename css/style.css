@@ -93,7 +93,12 @@ ul {
   color: #fff;
   transition: ease 0.3s all;
 }
-
+@media (max-width: 992px) {
+  .navbar__menu .menu__link:hover {
+    background: none;
+    color: #000;
+  }
+}
 /* Header Styles */
 .page__header {
   background: #fff;
@@ -403,3 +408,4 @@ section.your-active-class .landing__container::after {
   background-color: wheat;
   color: #000;
 }
+
