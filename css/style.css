@@ -96,6 +96,11 @@ ul {
   -o-transition: ease 0.3s all;
 }
 
+/* Active class link */
+.link_active {
+  background: wheat;
+}
+
 /* Header Styles */
 .page__header {
   background: #fff;
@@ -103,11 +108,6 @@ ul {
   top: 0;
   width: 100%;
   z-index: 5;
-}
-/* Active class link */
-.link_active {
-  background: wheat;
-  color: #000;
 }
 
 /* Footer Styles */
