@@ -10,7 +10,7 @@ For server i used : express, body-parser, cors and nodemon
 
 ##### Third, app.js :
 
-###### App have 3 main function to get data
+###### App has 3 main function to get data
 
 To get data from api => (https://openweathermap.org):
 
