@@ -28,7 +28,7 @@ async function getData(zipCode) {
         // Create Object for needed data
         let weatherData = {
           date: d.toLocaleDateString(),
-          feelings: document.querySelector(`#feelings`).value,
+          feeling: document.querySelector(`#feelings`).value,
         };
         // Add Properties to Object
         Object.defineProperties(weatherData, {
@@ -61,7 +61,7 @@ async function getData(zipCode) {
         temp: "",
         city: "",
         description: "",
-        feelings: "",
+        feeling: "",
       };
       postData(`http://localhost:5050/postData`, weatherData);
       // Shake zipDiv for wrong values
@@ -109,7 +109,7 @@ async function getServerData() {
     document.querySelector("#date").innerHTML = data.date;
     document.querySelector("#temp").innerHTML = data.temp;
     document.querySelector("#description").innerHTML = data.description;
-    document.querySelector("#content").innerHTML = data.feelings;
+    document.querySelector("#content").innerHTML = data.feeling;
   } catch (error) {
     console.log(Error(error));
   }
