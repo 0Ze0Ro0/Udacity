@@ -27,7 +27,7 @@ postData()
 To get data from server to app:
 
 ```
-getServerData
+getServerData()
 ```
 
 Added button click event to trigger those functions:
