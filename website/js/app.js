@@ -6,6 +6,7 @@ document.querySelector(`#generate`).addEventListener(`click`, () => {
   const zip = document.querySelector(`#zip`);
   getData(zip.value).then(() => getServerData());
   zip.value = "";
+  document.querySelector(`#feelings`).value = ""ك
 });
 
 // Function to get data from api
