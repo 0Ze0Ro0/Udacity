@@ -30,6 +30,7 @@ async function getData(zipCode) {
           date: d.toLocaleDateString(),
           feelings: document.querySelector(`#feelings`).value,
         };
+        // Add Properties to Object
         Object.defineProperties(weatherData, {
           temp: {
             writable: true,
