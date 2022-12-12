@@ -12,7 +12,7 @@ For server i used : express, body-parser, cors and nodemon
 
 ###### App have 3 main function to get data
 
-To get data from api => (https://openweathermap.org/):
+To get data from api => (https://openweathermap.org):
 
 ```
 getData()
@@ -31,6 +31,7 @@ getServerData
 ```
 
 Added button click event to trigger those functions:
+
 ex:
 
 ```
